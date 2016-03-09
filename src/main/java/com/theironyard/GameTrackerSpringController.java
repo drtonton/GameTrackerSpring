@@ -21,8 +21,8 @@ public class GameTrackerSpringController {
         return "home";
     }
     @RequestMapping(path = "/add-game", method = RequestMethod.POST)
-    public String addGame(String gameName, String gamePlatform, int gameYear) {
-        Game game = new Game(gameName, gamePlatform, gameYear);
+    public String addGame(String gameName, String gamePlatform, String gameGenre, int gameYear) {
+        Game game = new Game(gameName, gamePlatform, gameGenre, gameYear);
         games.save(game);
         return "redirect:/";
     }
