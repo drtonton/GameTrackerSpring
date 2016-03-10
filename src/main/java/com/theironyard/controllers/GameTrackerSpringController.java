@@ -34,9 +34,7 @@ public class GameTrackerSpringController {
     public String home(HttpSession session, Model model, String genre, Integer releaseYear, String platform) {
         String userName = (String) session.getAttribute("userName");
         User user = users.findFirstByName(userName);
-        if (userName != null) {
-            model.addAttribute("user", user);
-        }
+        model.addAttribute("user", user);
         if (platform != null) {
             model.addAttribute("games", games.findByPlatformStartsWith(platform));
         }

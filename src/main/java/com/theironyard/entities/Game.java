@@ -21,7 +21,7 @@ public class Game {
     int releaseYear;
 
     @ManyToOne      // many games to one user
-            User user;
+    User user;
 
     public Game(String name, String platform, String genre, int releaseYear, User user) {
         this.name = name;
