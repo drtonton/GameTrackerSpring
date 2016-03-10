@@ -1,5 +1,26 @@
 <html>
 <body>
+{{^user}}
+<form action="/login" method="post">
+    <input type="text" placeholder="Username" name="userName" required/>
+    <input type="password" placeholder="Password" name="password" required/>
+    <button type="submit">Login</button>
+</form>
+{{/user}}
+{{#user}}
+Welcome, {{name}}!
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+<br><br>
+
+<a href="/">All</a>
+<a href="/?genre=adventure">Adventure</a>
+<a href="/?genre=sports">Sports</a>
+<a href="/?genre=rpg">RPG</a>
+
+<br><br>
+
 <form action = "/add-game" method = "post">
     <input type = "text" placeholder = "Game name" name = "gameName"/>
     <select name="gameGenre">
@@ -22,5 +43,6 @@
     <li>{{name}} {{platform}} {{genre}} {{releaseYear}}</li>
 {{/games}}
 </ol>
+{{/user}}
 </body>
 </html>
